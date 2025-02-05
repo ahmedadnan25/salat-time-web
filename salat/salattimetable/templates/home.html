@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salat Time Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h2> Date: {{ date }} </h2>
+    <h2>  {{ day }} </h2>
+    <h1>Salat Time Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Prayer</th>
+                <th>Start time</th>
+                <th>End time </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in timeTable %}
+                <tr>
+                    <td>{{ row.prayer }}</td>
+                    <td>{{ row.starttime }}</td>
+                    <td>{{ row.endtime }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
